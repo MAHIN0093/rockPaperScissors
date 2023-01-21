@@ -4,40 +4,47 @@
         const randomIndex = Math.floor(Math.random()*choice.length);
         return choice[randomIndex] ;      
     }
+    let scoreComputer,scorePlayer = 0;
     let player,computer;
     function playRound(player,computer) {
         if (player.toLowerCase() === "rock" ){
             if (computer.toLowerCase() === "rock"){
-                alert("Draw!");
+                alert("Match!");
             }
             if (computer.toLowerCase() === "paper"){
-                alert("You lose!Paper Beats Rock");
+                alert("Paper Beats Rock");
+                scoreComputer++;
             }
             if (computer.toLowerCase() === "scissors"){
-                alert("You win!Rock Beats Scissors");
+                alert("Rock Beats Scissors");
+                scorePlayer++;
             }
         }
         if (player.toLowerCase() === "paper" ){
             if (computer.toLowerCase() === "paper"){
-                alert("Draw!");
+                alert("Match!");
             }
             if (computer.toLowerCase() === "rock"){
-                alert("You win!Paper Beats Rock");
+                alert("Paper Beats Rock");
+                scorePlayer++;
             }
             if (computer.toLowerCase() === "scissors"){
-                alert("You lose!Scissors Beats Paper");
+                alert("Scissors Beats Paper");
+                scoreComputer++;
             }
             
         }
         if (player.toLowerCase() === "scissors" ){
             if (computer.toLowerCase() === "scissors"){
-                alert("Draw!");
+                alert("Match!");
             }
             if (computer.toLowerCase() === "paper"){
-                alert("You win!Scissors Beats paper");
+                alert("Scissors Beats paper");
+                scorePlayer++;
             }
             if (computer.toLowerCase() === "rock"){
-                alert("You lose!Rock Beats Scissors");
+                alert("Rock Beats Scissors");
+                scoreComputer++;
             }
            
         }
@@ -47,5 +54,20 @@
         }
         
     }
-    playRound(prompt(),getComputerChoice());
+    
+    function game() {
+        for (let i = 0; i < 10; i++) {
+            playRound(prompt(),getComputerChoice());  
+        }
+        if (scoreComputer > scorePlayer) {
+            alert("You lose!");
+        }
+        if (scorePlayer > scoreComputer) {
+            alert("You win!");
+        }
+        if (scorePlayer === scoreComputer) {
+            alert("It's a draw!");
+        }
+    }
+    game();
 </script>
