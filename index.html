@@ -27,6 +27,7 @@
             if (computer.toLowerCase() === "scissors"){
                 console.log("You lose!Scissors Beats Paper");
             }
+            
         }
         if (player.toLowerCase() === "scissors" ){
             if (computer.toLowerCase() === "scissors"){
@@ -38,6 +39,11 @@
             if (computer.toLowerCase() === "rock"){
                 console.log("You lose!Rock Beats Scissors");
             }
+           
+        }
+        if((player.toLowerCase() !== "scissors") && (player.toLowerCase() !== "paper") && (player.toLowerCase() !== "rock") )
+        {
+            alert("Either choose Rock Paper or Scissors!");
         }
         
     }
