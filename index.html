@@ -4,5 +4,42 @@
         const randomIndex = Math.floor(Math.random()*choice.length);
         return choice[randomIndex] ;      
     }
-    getComputerChoice();
+    let player,computer;
+    function playRound(player,computer) {
+        if (player.toLowerCase() === "rock" ){
+            if (computer.toLowerCase() === "rock"){
+                console.log("Draw!");
+            }
+            if (computer.toLowerCase() === "paper"){
+                console.log("You lose!Paper Beats Rock");
+            }
+            if (computer.toLowerCase() === "scissors"){
+                console.log("You win!Rock Beats Scissors");
+            }
+        }
+        if (player.toLowerCase() === "paper" ){
+            if (computer.toLowerCase() === "paper"){
+                console.log("Draw!");
+            }
+            if (computer.toLowerCase() === "rock"){
+                console.log("You win!Paper Beats Rock");
+            }
+            if (computer.toLowerCase() === "scissors"){
+                console.log("You lose!Scissors Beats Paper");
+            }
+        }
+        if (player.toLowerCase() === "scissors" ){
+            if (computer.toLowerCase() === "scissors"){
+                console.log("Draw!");
+            }
+            if (computer.toLowerCase() === "paper"){
+                console.log("You win!Scissors Beats paper");
+            }
+            if (computer.toLowerCase() === "rock"){
+                console.log("You lose!Rock Beats Scissors");
+            }
+        }
+        
+    }
+    playRound(prompt(),getComputerChoice());
 </script>
