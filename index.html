@@ -1,73 +1,29 @@
-<script>
-    function getComputerChoice() {
-        const choice = ["rock","paper","scissors"];
-        const randomIndex = Math.floor(Math.random()*choice.length);
-        return choice[randomIndex] ;      
-    }
-    let scoreComputer =0,scorePlayer = 0;
-    let player,computer;
-    function playRound(player,computer) {
-        if (player.toLowerCase() === "rock" ){
-            if (computer.toLowerCase() === "rock"){
-                alert("Match!");
-            }
-            if (computer.toLowerCase() === "paper"){
-                alert("Paper Beats Rock");
-                scoreComputer++;
-            }
-            if (computer.toLowerCase() === "scissors"){
-                alert("Rock Beats Scissors");
-                scorePlayer++;
-            }
-        }
-        if (player.toLowerCase() === "paper" ){
-            if (computer.toLowerCase() === "paper"){
-                alert("Match!");
-            }
-            if (computer.toLowerCase() === "rock"){
-                alert("Paper Beats Rock");
-                scorePlayer++;
-            }
-            if (computer.toLowerCase() === "scissors"){
-                alert("Scissors Beats Paper");
-                scoreComputer++;
-            }
-            
-        }
-        if (player.toLowerCase() === "scissors" ){
-            if (computer.toLowerCase() === "scissors"){
-                alert("Match!");
-            }
-            if (computer.toLowerCase() === "paper"){
-                alert("Scissors Beats paper");
-                scorePlayer++;
-            }
-            if (computer.toLowerCase() === "rock"){
-                alert("Rock Beats Scissors");
-                scoreComputer++;
-            }
-           
-        }
-        if((player.toLowerCase() !== "scissors") && (player.toLowerCase() !== "paper") && (player.toLowerCase() !== "rock") )
-        {
-            alert("Either choose Rock Paper or Scissors!");
-        }
-        
-    }
-    
-    function game() {
-        for (let i = 0; i < 10; i++) {
-            playRound(prompt(),getComputerChoice());  
-        }
-        if (scoreComputer > scorePlayer) {
-            alert("You lose!");
-        }
-        if (scorePlayer > scoreComputer) {
-            alert("You win!");
-        }
-        if (scorePlayer === scoreComputer) {
-            alert("It's a draw!");
-        }
-    }
-    game();
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper Scissors</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Rock Paper Scissors</h1>
+		<div class="score">
+			<p>Player: <span id="player-score">0</span></p>
+			<p>Computer: <span id="computer-score">0</span></p>
+		</div>
+	</header>
+	<main>
+		<div class="selection">
+			<button id="rock"><img src="images/rock.png"></button>
+			<button id="paper"><img src="images/paper.png"></button>
+			<button id="scissors"><img src="images/scissors.png"></button>
+		</div>
+		<div class="result">
+			<h2>Make your move!</h2>
+			<p id="round-result"></p>
+			<button id="play-again">Play Again</button>
+		</div>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>
