@@ -6,13 +6,18 @@ const playerScoreSpan = document.querySelector("#player-score");
 const computerScoreSpan = document.querySelector("#computer-score");
 const roundResult = document.querySelector("#round-result");
 const playAgainBtn = document.querySelector("#play-again");
+const player_choice = document.getElementById('player-choice');
+const computer_choice = document.getElementById('computer-choice');
 
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * choices.length);
-    return choices[randomIndex];
+    const compMove = choices[randomIndex];
+    computer_choice.src = `images/${compMove}.jpg`;
+    return compMove;
 }
 
 function playRound(playerChoice) {
+    player_choice.src = `images/${playerChoice}.jpg`;
     const computerChoice = getComputerChoice();
     let result;
 
