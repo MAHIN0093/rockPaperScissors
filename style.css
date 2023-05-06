@@ -95,12 +95,21 @@ main {
 #play-again:hover {
     background-color: #555;
 }
-
+.write {
+	font-size: 4vh;
+}
+.boxen {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: space-between;
+}
 .gamebox {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+	margin-bottom: 5vh;
 }
 
 .gamebox div {

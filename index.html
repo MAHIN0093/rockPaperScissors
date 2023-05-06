@@ -18,21 +18,25 @@
 			<button id="paper"><img src="images/paper.jpg"></button>
 			<button id="scissors"><img src="images/scissors.jpg"></button>
 		</div>
-		<div class="gamebox">
-			<div class="player">
-				<h2>Player</h2>
-				<img id="player-choice" src="images/rock.jpg">
+		<div class="boxen">
+			<div class="gamebox">
+				<div class="player">
+					<h2 class="write">Player</h2>
+					<img id="player-choice" src="images/rock.jpg">
+				</div>
+				<div class="computer">
+					<h2 class="write">Computer</h2>
+					<img id="computer-choice" src="images/rock.jpg">
+				</div>
 			</div>
-			<div class="computer">
-				<h2>Computer</h2>
-				<img id="computer-choice" src="images/rock.jpg">
+			<div class="result">
+				<div>
+					<p id="round-result"></p>
+				</div>
+				<button id="play-again">Play Again</button>
 			</div>
 		</div>
-		<div class="result">
-			<h2>Make your move!</h2>
-			<p id="round-result"></p>
-			<button id="play-again">Play Again</button>
-		</div>
+		
 	</main>
 	<script src="script.js"></script>
 </body>
